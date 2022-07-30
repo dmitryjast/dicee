@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceimageView1: UIImageView!
     @IBOutlet weak var diceimageView2: UIImageView!
     
-    var namesArray = ["DiceOne", "DiceTwo", "DiceThree", "DiceFour", "DiceFive"]
+    var namesArray = ["DiceOne", "DiceTwo", "DiceThree", "DiceFour", "DiceFive", "DiceSix"]
     var leftDiceNumber = 0
     var rightDiceNumber = 4
     
@@ -27,12 +27,9 @@ class ViewController: UIViewController {
 
     // Button
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        
-        leftDiceNumber = leftDiceNumber + 1
-        diceimageView1.image = UIImage(named: namesArray[leftDiceNumber])
-        
-        rightDiceNumber = rightDiceNumber - 1
-        diceimageView2.image = UIImage(named: namesArray[rightDiceNumber]) 
+
+        diceimageView1.image = UIImage(named: namesArray[Int.random(in: 0...5)])
+        diceimageView2.image = UIImage(named: namesArray[Int.random(in: 0...5)])
     
     }
     
